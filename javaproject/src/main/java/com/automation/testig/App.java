@@ -10,6 +10,6 @@ public class App
     {
         System.out.println( "Hello World!" );
         System.out.println( "Welcome to my testing repo" );
-        System.out.println( "Alvaro Tarrifa Manual/automation Software Tester Engineer" );
+        System.out.println( "I'm Alvaro Tarrifa, a manual/automation software tester engineer" );
     }
 }
