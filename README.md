@@ -1,5 +1,5 @@
 # theTestAutomationCurse
-Repository for working on the course "The test automation curse" from the Globant University platform.
+Repository for working on the course "The test automation course" from the Globant University platform.
 
 I'm Alvaro Tarrifa, system engineer and senior software tester engineer
 
