@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/tu_usuario/java-ci-demo.git', branch: 'main'
+        git url: 'https://github.com/alvarotarrifaste/automationTestingJava.git', branch: 'main'
       }
     }
     stage('Compile') {
