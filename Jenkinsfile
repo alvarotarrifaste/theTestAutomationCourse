@@ -1,19 +1,29 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/alvarotarrifaste/automationTestingJava.git', branch: 'main'
+                git branch: 'main',
+                    url: 'https://github.com/alvarotarrifaste/automationTestingJava.git'
             }
         }
+
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                bat """
+                    cd javaproject
+                    mvn clean package
+                """
             }
         }
+
         stage('Run') {
             steps {
-                bat 'java -cp target/classes com.automation.testig.App'
+                bat """
+                    cd javaproject
+                    mvn exec:java -Dexec.mainClass=com.automation.testig.App
+                """
             }
         }
     }
