@@ -1,17 +1,23 @@
 pipeline {
-    agent any
+  agent any
 
-    stages {
-        stage('Compile') {
-            steps {
-                bat '''for %%f in (src\\main\\java\\*.java) do javac "%%f"'''
-            }
-        }
-
-        stage('Run') {
-            steps {
-                bat 'java -cp src/main/java Main'
-            }
-        }
+  stages {
+    stage('Checkout') {
+      steps {
+        git url: 'https://github.com/alvarotarrifaste/automationTestingJava.git', branch: 'main'
+      }
     }
+
+    stage('Compile') {
+      steps {
+        bat 'javac -d build src/main/java/com/automation/testig/*.java'
+      }
+    }
+
+    stage('Run') {
+      steps {
+        bat 'java -cp build com.automation.testig.App'
+      }
+    }
+  }
 }
