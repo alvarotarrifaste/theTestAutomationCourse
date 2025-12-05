@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/alvarotarrifaste/automationTestingJava.git', branch: 'main'
@@ -12,7 +13,7 @@ pipeline {
             steps {
                 bat '''
                     if not exist build mkdir build
-                    forfiles /p src\\main\\java /s /m *.java /c "cmd /c javac -d build @path"
+                    forfiles /p javaproject\\src\\main\\java /s /m *.java /c "cmd /c javac -d build @path"
                 '''
             }
         }
