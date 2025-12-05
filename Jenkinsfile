@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-
         stage('Compile') {
             steps {
-                bat 'javac "src/main/java/*.java"'
+                bat '''for %%f in (src\\main\\java\\*.java) do javac "%%f"'''
             }
         }
 
