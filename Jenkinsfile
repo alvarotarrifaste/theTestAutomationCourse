@@ -8,3 +8,5 @@ pipeline {
                 bat 'javac src\\Main.java'
             }
         }
+    }
+}
